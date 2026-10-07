@@ -24,5 +24,6 @@
       "Edit(site/**)",
       "Edit(bron/sjablonen/**)"
     ]
-  }
+  },
+  "model": "sonnet"
 }
