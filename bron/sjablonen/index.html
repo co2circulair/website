@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{head.title.1}}</title>
+<meta name="description" content="{{head.description}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CO2CirculAir">
+<meta property="og:title" content="{{head.title.1}}">
+<meta property="og:description" content="{{head.description}}">
+<meta property="og:url" content="https://co2circulair.com/">
+<meta property="og:image" content="https://co2circulair.com/img/og-co2circulair.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="container">
+    <a class="site-logo" href="index.html">
+      <img src="img/logo-co2circulair-200.png" alt="CO2CirculAir">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+      <span></span>
+    </label>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <nav class="toc toc-bar" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <ul>
+      <li><a href="#why">Why from air</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#modular">Start small</a></li>
+      <li><a href="#use">What you make with it</a></li>
+      <li><a href="#proof">Tested and proven</a></li>
+      <li><a href="#who">Who builds it</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <img class="hero-bg" src="img/pilot-larne-windturbine-1600.jpg" alt="The SMART-DAC pilot plant next to a wind turbine in Northern Ireland" width="1600" height="1200">
+    <div class="container">
+      <span class="kicker">{{hero.kicker.1}}</span>
+      <h1>{{hero.h1.1}}</h1>
+      <p>{{hero.p.1}}</p>
+      <ul class="stats stats-hero">
+        <li><span class="value">{{hero.value.1}}</span><span class="label">{{hero.label.1}}</span></li>
+        <li><span class="value">{{hero.value.2}}</span><span class="label">{{hero.label.2}}</span></li>
+        <li><span class="value">{{hero.value.3}}</span><span class="label">{{hero.label.3}}</span></li>
+      </ul>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="technology.html">{{hero.btn.1}}</a>
+        <a class="btn btn-secondary" href="contact.html">{{hero.btn.2}}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="container">
+      <span class="kicker">{{why.kicker.1}}</span>
+      <h2>{{why.h2.1}}</h2>
+      <p>{{why.p.1}}</p>
+      <p>{{why.p.2}}</p>
+      <p>{{why.p.3}}</p>
+      <ul class="stats cost-tiles">
+        <li class="past"><span class="year">{{why.year.1}}</span><span class="value">{{why.value.1}}</span><span class="label">{{why.label.1}}</span></li>
+        <li class="past"><span class="year">{{why.year.2}}</span><span class="value">{{why.value.2}}</span><span class="label">{{why.label.2}}</span></li>
+        <li class="future"><span class="year">{{why.year.3}}</span><span class="value">{{why.value.3}}</span><span class="label">{{why.label.3}}</span></li>
+        <li class="future"><span class="year">{{why.year.4}}</span><span class="value">{{why.value.4}}</span><span class="label">{{why.label.4}}</span></li>
+      </ul>
+      <p>{{why.p.4}}</p>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="how">
+    <div class="container">
+      <span class="kicker">{{how.kicker.1}}</span>
+      <h2>{{how.h2.1}}</h2>
+      <div class="process-wrap">
+      <svg class="process" viewBox="0 0 1190 330" role="img" aria-labelledby="process-title" xmlns="http://www.w3.org/2000/svg">
+        <title id="process-title">Process: wind carries air with 425 ppm CO2 into membrane gas absorption, the absorbent with captured CO2 goes via the SMART buffer to membrane electrodialysis, which produces CO2 at 99.5 percent purity and returns the regenerated absorbent via the buffer to capture. Inputs: under 0.2 kWh per kg electricity for capture, 1.4 litres of RO water per kg to compensate evaporation, 1.5 kWh per kg electricity for release.</title>
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#565f54"/>
+          </marker>
+        </defs>
+        <g font-family="Inter, Arial, sans-serif" font-size="15" fill="#2b322a">
+          <!-- wind in -->
+          <text x="20" y="128" font-weight="700" fill="#141813">Wind</text>
+          <text x="20" y="150" fill="#565f54">air, 425 ppm CO2</text>
+          <line x1="150" y1="140" x2="190" y2="140" stroke="#565f54" stroke-width="2" marker-end="url(#arrow)"/>
+          <!-- capture -->
+          <rect x="200" y="70" width="210" height="140" rx="6" fill="#ffffff" stroke="#529f3f" stroke-width="2"/>
+          <text x="305" y="112" text-anchor="middle" font-weight="700" fill="#141813">Capture</text>
+          <text x="305" y="136" text-anchor="middle">membrane gas absorption</text>
+          <text x="305" y="158" text-anchor="middle">using wind, no fans</text>
+          <text x="305" y="188" text-anchor="middle" font-weight="700" fill="#529f3f">&lt; 0.2 kWh/kg</text>
+          <!-- top flow: capture to buffer to release -->
+          <line x1="410" y1="110" x2="520" y2="110" stroke="#565f54" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="465" y="96" text-anchor="middle" font-size="12" fill="#565f54">loaded absorbent</text>
+          <line x1="680" y1="110" x2="790" y2="110" stroke="#565f54" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="735" y="96" text-anchor="middle" font-size="12" fill="#565f54">to regeneration</text>
+          <!-- buffer -->
+          <rect x="530" y="70" width="150" height="140" rx="6" fill="#ffffff" stroke="#9ed26d" stroke-width="2"/>
+          <text x="605" y="112" text-anchor="middle" font-weight="700" fill="#141813">SMART buffer</text>
+          <text x="605" y="136" text-anchor="middle">tanks</text>
+          <text x="605" y="158" text-anchor="middle">capture 24/7,</text>
+          <text x="605" y="178" text-anchor="middle">release on demand</text>
+          <!-- return flow: release to buffer to capture -->
+          <line x1="790" y1="170" x2="680" y2="170" stroke="#565f54" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+          <text x="735" y="192" text-anchor="middle" font-size="12" fill="#565f54">regenerated</text>
+          <line x1="520" y1="170" x2="410" y2="170" stroke="#565f54" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)"/>
+          <text x="465" y="192" text-anchor="middle" font-size="12" fill="#565f54">ready to capture</text>
+          <!-- release -->
+          <rect x="800" y="70" width="210" height="140" rx="6" fill="#ffffff" stroke="#529f3f" stroke-width="2"/>
+          <text x="905" y="112" text-anchor="middle" font-weight="700" fill="#141813">Release</text>
+          <text x="905" y="136" text-anchor="middle">membrane electrodialysis</text>
+          <text x="905" y="158" text-anchor="middle">electricity, no heat</text>
+          <text x="905" y="188" text-anchor="middle" font-weight="700" fill="#529f3f">&approx; 1.5 kWh/kg</text>
+          <!-- inputs from below -->
+          <line x1="305" y1="280" x2="305" y2="220" stroke="#565f54" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="305" y="302" text-anchor="middle" font-size="12" fill="#565f54">electricity</text>
+          <line x1="605" y1="280" x2="605" y2="220" stroke="#565f54" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="605" y="302" text-anchor="middle" font-size="12" fill="#565f54">1.4 litres of RO water per kg CO2, to compensate evaporation</text>
+          <line x1="905" y1="280" x2="905" y2="220" stroke="#565f54" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="905" y="302" text-anchor="middle" font-size="12" fill="#565f54">electricity</text>
+          <!-- output -->
+          <line x1="1010" y1="140" x2="1060" y2="140" stroke="#565f54" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="1070" y="128" font-weight="700" fill="#141813">Green CO2</text>
+          <text x="1070" y="148" fill="#565f54">99.5% pure</text>
+        </g>
+      </svg>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>{{how.h3.1}}</h3>
+          <p>{{how.p.2}}</p>
+          <span class="figure">Under 0.2 kWh per kg, only for pumping the absorbent through the membranes</span>
+        </li>
+        <li>
+          <h3>{{how.h3.2}}</h3>
+          <p>{{how.p.3}}</p>
+          <span class="figure">About 1.5 kWh per kg</span>
+        </li>
+        <li>
+          <h3>{{how.h3.3}}</h3>
+          <p>{{how.p.4}}</p>
+          <span class="figure">24/7, or produce on demand</span>
+        </li>
+      </ol>
+      <p class="measure">{{how.p.5}}</p>
+      <p><a class="btn btn-secondary" href="technology.html">{{how.btn.1}}</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="modular">
+    <div class="container">
+      <span class="kicker">{{modular.kicker.1}}</span>
+      <h2>{{modular.h2.1}}</h2>
+      <div class="split split-reverse">
+        <div>
+          <p>{{modular.p.1}}</p>
+          <p>{{modular.p.2}}</p>
+        </div>
+        <figure>
+          <img src="img/pilot-larne-vooraanzicht-1600.jpg" alt="Two stacked capture containers with louvred sides, on top of the buffer and control container" width="1600" height="1200" loading="lazy">
+          <figcaption>{{modular.figcaption.1}}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-subtle" id="use">
+    <div class="container">
+      <span class="kicker">{{use.kicker.1}}</span>
+      <h2>{{use.h2.1}}</h2>
+      <p class="lede">{{use.p.1}}</p>
+      <ol class="steps">
+        <li>
+          <h3>{{use.h3.1}}</h3>
+          <p>{{use.p.2}}</p>
+        </li>
+        <li>
+          <h3>{{use.h3.3}}</h3>
+          <p>{{use.p.4}}</p>
+        </li>
+        <li>
+          <h3>{{use.h3.2}}</h3>
+          <p>{{use.p.3}}</p>
+        </li>
+        <li>
+          <h3>{{use.h3.4}}</h3>
+          <p>{{use.p.5}}</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="proof">
+    <div class="container">
+      <span class="kicker">{{proof.kicker.1}}</span>
+      <h2>{{proof.h2.1}}</h2>
+      <p class="measure">{{proof.p.1}}</p>
+      <ul class="stats">
+        <li><span class="value">{{proof.value.1}}</span><span class="label">{{proof.label.1}}</span></li>
+        <li><span class="value">{{proof.value.2}}</span><span class="label">{{proof.label.2}}</span></li>
+        <li><span class="value">{{proof.value.3}}</span><span class="label">{{proof.label.3}}</span></li>
+        <li><span class="value">{{proof.value.4}}</span><span class="label">{{proof.label.4}}</span></li>
+      </ul>
+      <div class="split" style="align-items:start">
+        <div>
+          <p>{{proof.p.2}}</p>
+          <p>{{proof.p.3}}</p>
+          <p>{{proof.p.4}}</p>
+        </div>
+        <figure>
+          <img src="img/desnz-team-1280.jpg" srcset="img/desnz-team-800.jpg 800w, img/desnz-team-1280.jpg 1280w" sizes="(min-width: 900px) 50vw, 100vw" alt="The project team in front of the SMART-DAC pilot plant near Larne" width="1282" height="883" loading="lazy">
+          <figcaption>{{proof.figcaption.1}}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" id="who">
+    <div class="container">
+      <span class="kicker">{{who.kicker.1}}</span>
+      <h2>{{who.h2.1}}</h2>
+      <p>{{who.p.1}}</p>
+      <p><a class="btn btn-primary" href="contact.html">{{who.btn.1}}</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <img src="img/logo-co2circulair-200.png" alt="CO2CirculAir">
+      <p>Smart Direct Air Capture. Green CO2 made from air, with wind and electricity, where it is needed.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>CO2CirculAir B.V.</p>
+      <p>Utrechtseweg 27, 6862 AB Oosterbeek</p>
+      <p><a href="mailto:berno@co2xair.nl">berno@co2xair.nl</a></p>
+      <p>KVK 78096294</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

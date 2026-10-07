@@ -1,0 +1,7 @@
+# Netlify publiceert alleen de map site/, zonder buildstap.
+[build]
+  publish = "site"
+  # Een publicatie op productie kost 15 credits (gratis abonnement: 300 per maand).
+  # Sla de productiepublicatie over als er in site/ niets veranderd is, bijvoorbeeld
+  # bij een wijziging aan CLAUDE.md. Voorbeeldversies kosten niets en draaien altijd.
+  ignore = "[ \"$CONTEXT\" = \"production\" ] && git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- site/"

@@ -1,0 +1,709 @@
+/* CO2CirculAir, basisstijl. Losse HTML/CSS, geen framework, geen externe afhankelijkheden. */
+
+:root {
+  /* Kleurtokens, gesampled uit het logo (site/img/logo-co2circulair-800.png) */
+  --green-dark: #529f3f;   /* woordmerk "CO2CirculAir" */
+  --green-light: #9ed26d;  /* swirl-icoon en subline "Smart Direct Air Capture" */
+  --green-dark-hover: #457f34;
+  --green-deep: #173417;   /* donkere band, hero-overlay, slotblok */
+  --green-tint: #eef6e6;   /* lichte groene achtergrond */
+
+  --gray-950: #141813;
+  --gray-800: #2b322a;
+  --gray-600: #565f54;
+  --gray-400: #8b938a;
+  --gray-200: #d8ddd5;
+  --gray-100: #eef1ec;
+  --gray-050: #f7f9f6;
+  --white: #ffffff;
+
+  --text-body: var(--gray-800);
+  --text-muted: var(--gray-600);
+  --border-color: var(--gray-200);
+  --bg-page: var(--white);
+  --bg-subtle: var(--gray-050);
+
+  /* Typografische schaal, basis 16px, ratio circa 1,25 */
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --step--1: 0.875rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.563rem;
+  --step-3: 1.953rem;
+  --step-4: 2.441rem;
+  --step-5: 3.052rem;
+
+  --container-width: 1120px;
+  --gutter: 1.25rem;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--gray-950);
+  margin: 0 0 0.75em;
+}
+
+h1 { font-size: var(--step-5); }
+h2 { font-size: var(--step-4); }
+h3 { font-size: var(--step-3); }
+h4 { font-size: var(--step-2); }
+
+p {
+  margin: 0 0 1em;
+}
+
+small {
+  font-size: var(--step--1);
+}
+
+a {
+  color: var(--green-dark);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--green-dark-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- Header en navigatie ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 0.75rem;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo img {
+  height: 44px;
+  width: auto;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  color: var(--gray-800);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--step--1);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--green-dark);
+}
+
+@media (min-width: 900px) {
+  .site-nav a { padding-block: 0.4rem; border-bottom: 2px solid transparent; }
+  .site-nav a[aria-current="page"] { border-bottom-color: var(--green-dark); }
+}
+
+/* Mobiele navigatie zonder JavaScript: checkbox-patroon */
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--gray-800);
+  position: relative;
+  transition: none;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-label span::before { top: -6px; }
+.nav-toggle-label span::after { top: 6px; }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  background: var(--gray-950);
+  color: var(--gray-200);
+  margin-top: 0;
+}
+
+.site-footer .container {
+  padding-block: 3rem 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 600px) {
+  .site-footer .container { grid-template-columns: 1.4fr 1fr 1fr; }
+}
+
+.site-footer img { height: 40px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; margin-bottom: 0.75rem; }
+.site-footer p { margin: 0 0 0.35rem; color: var(--gray-400); font-size: var(--step--1); }
+.site-footer h4 { color: var(--white); font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; }
+.site-footer li { margin-bottom: 0.4rem; font-size: var(--step--1); }
+.site-footer a { color: var(--gray-200); text-decoration: none; }
+.site-footer a:hover { color: var(--green-light); }
+
+/* ---------- Main ---------- */
+
+main {
+  min-height: 40vh;
+}
+
+/* ---------- Breakpoints: 600px en 900px ---------- */
+
+@media (max-width: 899px) {
+  .nav-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-nav {
+    position: relative;
+  }
+
+  .site-nav ul {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    min-width: 200px;
+    box-shadow: 0 8px 24px rgba(20, 24, 19, 0.08);
+
+    /* verborgen tot de checkbox aan staat, geen JavaScript nodig */
+    max-height: 0;
+    overflow: hidden;
+    border-width: 0;
+    box-shadow: none;
+  }
+
+  .site-nav ul li {
+    padding: 0;
+  }
+
+  .site-nav ul a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .nav-toggle:checked ~ .site-nav ul {
+    max-height: 20rem;
+    border-width: 1px;
+    box-shadow: 0 8px 24px rgba(20, 24, 19, 0.08);
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --step-5: 3.5rem;
+  }
+}
+
+@media (max-width: 599px) {
+  :root {
+    --gutter: 1rem;
+    --step-5: 2.25rem;
+    --step-4: 1.953rem;
+  }
+
+}
+
+/* ---------- Pagina-onderdelen ---------- */
+
+.section { padding-block: 5rem; }
+.section-subtle { background: var(--bg-subtle); }
+.section-tint { background: var(--green-tint); }
+.section h2 { max-width: 30ch; font-size: var(--step-4); }
+.section h1 { max-width: 22ch; }
+.lede { font-size: var(--step-1); color: var(--text-muted); max-width: 60ch; line-height: 1.5; }
+.measure { max-width: 62ch; }
+
+.kicker {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: var(--step--1); font-weight: 700; color: var(--green-dark);
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem;
+}
+.kicker::before { content: ""; width: 1.75rem; height: 3px; background: var(--green-light); border-radius: 2px; }
+
+/* Hero */
+.hero { position: relative; color: var(--white); background: var(--green-deep); overflow: hidden; }
+.hero img.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(23, 52, 23, 0.94) 0%, rgba(23, 52, 23, 0.78) 42%, rgba(23, 52, 23, 0.25) 75%, rgba(23, 52, 23, 0.1) 100%);
+}
+.hero .container { position: relative; z-index: 1; padding-block: 7rem 6rem; }
+.hero .kicker { color: var(--green-light); }
+.hero .kicker::before { background: var(--green-light); }
+.hero h1 { color: var(--white); max-width: 24ch; margin-bottom: 1.25rem; font-size: var(--step-5); }
+.hero p { max-width: 50ch; font-size: var(--step-1); color: rgba(255, 255, 255, 0.88); line-height: 1.5; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+
+/* Knoppen */
+.btn {
+  display: inline-block; padding: 0.85rem 1.5rem; border-radius: 6px;
+  font-weight: 500; text-decoration: none; border: 1.5px solid transparent; line-height: 1.2;
+}
+.btn-primary { background: var(--green-dark); color: var(--white); border-color: var(--green-dark); }
+.btn-primary:hover { background: var(--green-dark-hover); border-color: var(--green-dark-hover); color: var(--white); }
+.btn-secondary { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.7); }
+.btn-secondary:hover { border-color: var(--white); background: rgba(255, 255, 255, 0.1); color: var(--white); }
+.section .btn-secondary { color: var(--green-dark); border-color: var(--green-dark); }
+.section .btn-secondary:hover { background: var(--green-tint); color: var(--green-dark-hover); }
+.cta .btn-secondary { color: var(--white); border-color: rgba(255, 255, 255, 0.7); }
+
+/* Twee kolommen */
+.split { display: grid; gap: 2.5rem; align-items: center; }
+.split figure, figure { margin: 0; }
+figcaption { font-size: var(--step--1); color: var(--text-muted); margin-top: 0.6rem; }
+.split img { border-radius: 10px; box-shadow: 0 12px 32px rgba(20, 24, 19, 0.14); width: 100%; }
+@media (min-width: 900px) {
+  .split { grid-template-columns: 1fr 1fr; gap: 4.5rem; }
+  .split.split-reverse > :first-child { order: 2; }
+  .split figure img { max-height: 520px; object-fit: cover; }
+}
+
+/* Stappen en toepassingen, kaarten met nummer */
+.steps { display: grid; gap: 1.5rem; margin: 2.5rem 0 2rem; padding: 0; list-style: none; counter-reset: step; }
+@media (min-width: 600px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.steps li {
+  position: relative; background: var(--white); border-radius: 10px; padding: 1.75rem 1.5rem 1.5rem;
+  border: 1px solid var(--border-color); box-shadow: 0 4px 16px rgba(20, 24, 19, 0.05); counter-increment: step;
+}
+.steps li::before {
+  content: counter(step, decimal-leading-zero); display: block;
+  font-weight: 700; font-size: var(--step-2); color: var(--green-light); line-height: 1; margin-bottom: 0.75rem;
+}
+.steps h3 { font-size: var(--step-1); margin-bottom: 0.5rem; }
+.steps p { margin: 0; color: var(--text-body); }
+.steps .figure { display: block; font-weight: 700; color: var(--green-dark); margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color); }
+#use .steps { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 599px) { #use .steps { grid-template-columns: 1fr; } }
+
+/* Kerncijfers */
+.stats { display: grid; gap: 1.75rem 2rem; margin: 2.5rem 0; padding: 0; list-style: none; }
+@media (min-width: 600px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+.stats li { border-left: 3px solid var(--green-light); padding-left: 1.1rem; }
+.stats .value { display: block; font-size: var(--step-5); font-weight: 700; line-height: 1; color: var(--green-dark); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.stats .label { display: block; color: var(--text-muted); font-size: var(--step--1); margin-top: 0.5rem; }
+
+/* Donkere bewijsband */
+.section-dark { background: var(--green-deep); color: rgba(255, 255, 255, 0.88); }
+.section-dark h2, .section-dark h3 { color: var(--white); }
+.section-dark .kicker { color: var(--green-light); }
+.section-dark .stats .value { color: var(--white); }
+.section-dark .stats .label { color: rgba(255, 255, 255, 0.7); }
+.section-dark figcaption { color: rgba(255, 255, 255, 0.7); }
+.section-dark a:not(.btn) { color: var(--green-light); }
+
+/* Tabel */
+.table-wrap { overflow-x: auto; margin: 2.5rem 0 1rem; }
+table { border-collapse: collapse; width: 100%; min-width: 480px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 0.8rem 0.9rem; border-bottom: 1px solid var(--border-color); }
+thead th { font-weight: 500; color: var(--text-muted); font-size: var(--step--1); border-bottom: 2px solid var(--green-light); }
+td:not(:first-child), th:not(:first-child) { text-align: right; }
+tbody th { color: var(--gray-950); font-weight: 500; font-size: var(--step-0); }
+td { font-size: var(--step-1); font-weight: 500; color: var(--gray-950); }
+.table-note { font-size: var(--step--1); color: var(--text-muted); max-width: 70ch; }
+
+/* Kenmerkenlijst */
+.plain-list { display: grid; gap: 1rem 2.5rem; padding: 0; margin: 2rem 0; list-style: none; }
+@media (min-width: 600px) { .plain-list { grid-template-columns: 1fr 1fr; } }
+.plain-list li { padding-left: 1.75rem; position: relative; }
+.plain-list li::before {
+  content: ""; position: absolute; left: 0; top: 0.35em; width: 1rem; height: 1rem; border-radius: 50%;
+  background: var(--green-light);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='8'/></svg>");
+}
+
+/* Procestekening */
+.process { width: 100%; height: auto; margin: 2.5rem 0 1rem; }
+
+/* Slotblok met de vraag */
+.cta { background: var(--green-deep); color: rgba(255, 255, 255, 0.88); }
+.cta h2 { color: var(--white); }
+.cta p { max-width: 60ch; }
+.cta a:not(.btn) { color: var(--green-light); }
+
+/* Lege pagina, in aanbouw */
+.placeholder { border: 1px dashed var(--gray-400); border-radius: 8px; padding: 2rem; color: var(--text-muted); max-width: 60ch; background: var(--bg-subtle); }
+
+@media (max-width: 599px) {
+  .section { padding-block: 3.5rem; }
+  .hero .container { padding-block: 4.5rem 4rem; }
+}
+@media (max-width: 899px) { .hero h1 br, .hero p br { display: none; } }
+
+/* Regelafbrekingen, 11 september */
+h1, h2, h3 { text-wrap: balance; }
+.hero h1 { font-size: clamp(2rem, 3.6vw, 2.9rem); max-width: none; }
+.section h1 { font-size: clamp(2rem, 3.4vw, 2.75rem); max-width: 26ch; }
+.hero img.hero-bg { object-position: 65% 22%; }
+.hero .container { padding-block: 8rem 7rem; }
+@media (max-width: 599px) { .hero .container { padding-block: 4.5rem 4rem; } }
+
+/* ---------- Donker thema, wens van Berno, 11 september ---------- */
+/* Overschrijft de tokens van boven. Weghalen van dit blok geeft de lichte versie terug. */
+
+:root {
+  --bg-page: #121512;
+  --bg-subtle: #191d19;
+  --green-tint: #161c15;
+  --green-deep: #0c0f0c;
+  --text-body: #d5dbd2;
+  --text-muted: #98a295;
+  --border-color: #2c332b;
+  --green-dark: #6dbb4f;
+  --green-dark-hover: #86cc6a;
+  --card-bg: #1c211b;
+  color-scheme: dark;
+}
+
+h1, h2, h3, h4 { color: var(--white); }
+.site-header { background: rgba(18, 21, 18, 0.96); }
+.site-nav a { color: var(--text-body); }
+.site-nav ul { background: var(--bg-subtle); }
+.nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after { background: var(--text-body); }
+
+.hero { background: var(--bg-page); }
+.hero::after {
+  background: linear-gradient(100deg, rgba(18, 21, 18, 0.96) 0%, rgba(18, 21, 18, 0.82) 42%, rgba(18, 21, 18, 0.3) 75%, rgba(18, 21, 18, 0.15) 100%);
+}
+.hero p { color: var(--text-body); }
+
+.btn-primary { background: var(--green-dark); border-color: var(--green-dark); color: #0c0f0c; }
+.btn-primary:hover { background: var(--green-dark-hover); border-color: var(--green-dark-hover); color: #0c0f0c; }
+.section .btn-secondary { color: var(--green-dark); border-color: var(--green-dark); }
+.section .btn-secondary:hover { background: rgba(109, 187, 79, 0.12); color: var(--green-dark-hover); }
+
+.steps li { background: var(--card-bg); border-color: var(--border-color); box-shadow: none; }
+.steps li::before { color: var(--green-dark); }
+.steps p { color: var(--text-body); }
+.steps .figure { color: var(--green-light); border-top-color: var(--border-color); }
+
+.stats .value { color: var(--green-light); }
+.stats li { border-left-color: var(--green-dark); }
+
+.section-dark { background: #0c0f0c; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.cta { background: #0c0f0c; border-top: 1px solid var(--border-color); }
+
+.split img { box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5); }
+tbody th, td { color: var(--white); }
+thead th { border-bottom-color: var(--green-dark); }
+.plain-list li::before { background: var(--green-dark); }
+.placeholder { background: var(--card-bg); border-color: var(--gray-600); }
+
+.site-footer { background: #0c0f0c; border-top: 1px solid var(--border-color); }
+
+/* Procestekening: kleuren voor de donkere achtergrond */
+.process rect { fill: var(--card-bg); }
+.process text { fill: var(--text-body); }
+.process text[font-weight="700"] { fill: var(--white); }
+.process text[fill="#529f3f"] { fill: var(--green-light); }
+.process text[fill="#565f54"] { fill: var(--text-muted); }
+.process line, .process path { stroke: var(--text-muted); }
+.process marker path { fill: var(--text-muted); stroke: none; }
+.hero h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); }
+
+/* Ronde 1, 11 september */
+
+/* 4: h2 no longer balances into two lines, gets the full container width */
+h2 { text-wrap: wrap; }
+.section h2 { max-width: none; }
+
+/* 5: lede, measure and the cta paragraphs get more room and pretty wrapping */
+.lede, .measure, .cta p { max-width: 72ch; text-wrap: pretty; }
+
+/* 6: the lede under "CO2 is a raw material, not waste." stays on one line */
+#use .lede { font-size: 1.125rem; max-width: none; }
+
+/* 7: the two cost figures get their own two-column stats layout */
+.stats-2 { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 2.5rem; }
+
+/* 8: the green figure line sits at the same height at the bottom of every card */
+.steps li { display: flex; flex-direction: column; }
+.steps .figure { margin-top: auto; }
+
+/* 10: own figures highlighted in green in running text */
+.hl { color: var(--green-light); font-weight: 600; }
+
+/* 11: footer logo in its own green, like the header */
+.site-footer img { filter: none; }
+
+/* Ronde 2, 11 september */
+
+/* 1, 5, 7: .section h1 no longer balances or gets a max-width, so a two-line
+   heading breaks exactly where the <br> in the markup says, and a heading
+   that fits stays on one line. The <br> itself is only meant for desktop. */
+.section h1 { text-wrap: wrap; max-width: none; }
+@media (max-width: 899px) {
+  .section h1 br { display: none; }
+}
+
+/* 2: the technology page lede under the h1 gets the full container width */
+#principle .lede { max-width: none; }
+
+/* 9: contact cards, in .steps style, get their button pinned to the card bottom */
+#reasons .card-cta { margin-top: auto; margin-bottom: 0; }
+
+/* Ronde 3, 15 september */
+
+/* 5: back-to-top button, fixed bottom-right on every page, no JavaScript */
+.to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 20;
+  background: var(--card-bg);
+  color: var(--green-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-size: var(--step--1);
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.2;
+}
+.to-top:hover { color: var(--green-dark-hover); }
+@media (max-width: 599px) {
+  .to-top { padding: 0.35rem 0.6rem; }
+}
+
+/* 6: contents column on technology.html, sticky "On this page" nav */
+.toc-title {
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.75rem;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc a { color: var(--text-muted); text-decoration: none; }
+.toc a:hover { color: var(--green-dark); }
+
+@media (min-width: 900px) {
+  main.with-toc {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    column-gap: 3rem;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  main.with-toc > .toc {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+    font-size: var(--step--1);
+  }
+  main.with-toc > .section {
+    grid-column: 2;
+  }
+  main.with-toc .container {
+    padding-inline: 0;
+  }
+  .toc ul { display: grid; gap: 0.6rem; }
+}
+
+@media (max-width: 899px) {
+  .toc {
+    display: block;
+    width: 100%;
+    max-width: var(--container-width);
+    margin-inline: auto;
+    padding: 1.25rem var(--gutter);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .toc ul { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; }
+}
+
+/* Section anchors stay clear of the sticky header when jumped to */
+.section[id] { scroll-margin-top: 5rem; }
+/* Titel Technology op twee regels, 15 september */
+@media (min-width: 900px) { .section h1 { font-size: clamp(2rem, 3vw, 2.4rem); } }
+@media (min-width: 900px) { main.with-toc .section h1 { font-size: 2.1rem; max-width: none; } }
+
+/* Teamportretten, 15 september */
+.portrait { width: 100%; max-width: 260px; border-radius: 10px; margin-bottom: 1.25rem; box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
+.portrait-placeholder { width: 100%; max-width: 260px; aspect-ratio: 3 / 4; border: 1px dashed var(--gray-600); border-radius: 10px; margin-bottom: 1.25rem; }
+
+/* Vier ingangen op contact, 15 september */
+@media (min-width: 900px) { .steps-4 { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 600px) and (max-width: 899px) { .steps-4 { grid-template-columns: repeat(2, 1fr); } }
+
+#reasons { padding-top: 0; }
+
+/* Print: desktopbreedte en geen zwevende knop, 16 september */
+@media print {
+  @page { size: 1400px 1980px; margin: 0; }
+  .to-top, .nav-toggle-label { display: none !important; }
+  .site-header { position: static; }
+  .section { break-inside: avoid; }
+}
+
+/* Reviewmarkering v3, 18 september: blauw is gewijzigd t.o.v. v2. Verwijderen met: sed -i "" -e "s|<span class=\"rev\">||g; s|</span>||g" is te grof, gebruik het opruimscript. */
+.rev { color: #5ab4ff; }
+.rev-note { color: #5ab4ff; font-size: var(--step--1); border: 1px dashed #5ab4ff; padding: 0.4rem 0.6rem; border-radius: 6px; max-width: 70ch; }
+.stats-hero { grid-template-columns: repeat(3, auto); justify-content: start; gap: 1rem 2.5rem; margin: 1.5rem 0 0.5rem; }
+.stats-hero .value { color: var(--green-light); font-size: var(--step-3); }
+.stats-hero .label { color: rgba(255,255,255,0.8); }
+
+/* Kostentabel: nu en roadmap in verschillende kleur, 18 september */
+table.cost th.past, table.cost td.past { color: var(--white); }
+table.cost th.future, table.cost td.future { color: var(--green-light); }
+table.cost thead th.future { border-bottom-color: var(--green-light); }
+table.cost thead th.past { border-bottom-color: var(--gray-400); }
+.stats-hero { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; }
+.stats-hero li { border-left: 3px solid var(--green-light); padding-left: 1rem; }
+@media (min-width: 900px) { .hero h1 { font-size: clamp(2rem, 3.4vw, 2.9rem); } }
+
+/* Openstaande punten en kostentegels, 19 september */
+mark.open { background: rgba(230, 160, 40, 0.22); color: #f0b84a; padding: 0 .25em; border-radius: 3px; border-bottom: 2px solid #e6a028; }
+.open-note { margin-top: .6rem; font-size: var(--step--1); }
+.cost-tiles { grid-template-columns: repeat(2, 1fr); margin-top: 2.5rem; }
+@media (min-width: 900px) { .cost-tiles { grid-template-columns: repeat(4, 1fr); } }
+.cost-tiles .year { display: block; font-size: var(--step--1); letter-spacing: .06em; text-transform: uppercase; margin-bottom: .35rem; }
+.cost-tiles li.past { border-left-color: var(--gray-400); }
+.cost-tiles li.past .year, .cost-tiles li.past .value { color: var(--white); }
+.cost-tiles li.future { border-left-color: var(--green-light); }
+.cost-tiles li.future .year, .cost-tiles li.future .value { color: var(--green-light); }
+
+/* 19 september: hero-alinea en "Why from air" over de volle breedte, net als de koppen */
+.hero p { max-width: none; }
+.hero h1 { font-size: clamp(2rem, 3vw, 2.75rem); }
+
+/* 19 september: met een inhoudsopgave ernaast lijken gekleurde secties op een kader. Daarom daar geen wisselende achtergrond, alleen een scheidingslijn. */
+@media (min-width: 900px) {
+  main.with-toc .section-subtle, main.with-toc .section-tint, main.with-toc .section-dark { background: transparent; border: 0; }
+  main.with-toc > .section + .section { border-top: 1px solid var(--border-color); }
+}
+
+/* 19 september: op home een smalle inhoudsopgavebalk onder het menu, geen zijkolom */
+@media (min-width: 900px) {
+  .toc-bar { display: flex; align-items: baseline; gap: 1.5rem; max-width: var(--container-width); margin-inline: auto; padding: 0.7rem var(--gutter); font-size: var(--step--1); border-bottom: 1px solid var(--border-color); }
+  .toc-bar .toc-title { margin: 0; white-space: nowrap; }
+  .toc-bar ul { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; }
+}
+@media (max-width: 899px) { .toc-bar { display: none; } }
+
+/* 19 september: cijferblokjes in "Tested and proven" in dezelfde stijl als bovenaan de pagina: groen en kleiner */
+.section-dark .stats .value { color: var(--green-light); font-size: var(--step-3); }
+.section-dark .stats .label { color: rgba(255,255,255,0.8); }
+
+/* 19 september: Andrea wil overal dezelfde zwarte achtergrond, ook op home. Scheidingslijn tussen de blokken. */
+.section-subtle, .section-tint, .section-dark { background: transparent; border: 0; }
+main > .section + .section { border-top: 1px solid var(--border-color); }
+
+/* 19 september: op telefoon zijn de procestekening en de kostentabel breder dan het scherm; zijwaarts scrollen met een hint */
+.process-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 599px) {
+  .process-wrap .process { min-width: 860px; }
+  .process-wrap::after, .table-wrap::after { content: "Swipe sideways to see the whole picture"; display: block; font-size: var(--step--1); color: var(--text-muted); margin: 0.25rem 0 1rem; }
+}
+/* Slotblok op Technology zonder eigen achtergrond naast de inhoudsopgave */
+main.with-toc .cta { background: transparent; }
+/* Iets meer lucht tussen de intro en de portretten op Team */
+.section .split[style] { margin-top: 2.5rem; }
+
+/* 19 september, opmerkingen Andrea: alle cijferblokjes in dezelfde maat en kleur als bovenaan home; slottekst op home volle breedte; regeleinden in koppen op telefoon weg */
+.stats .value { font-size: var(--step-3); color: var(--green-light); }
+.cta p { max-width: none; }
+@media (max-width: 899px) { .section h2 br { display: none; } }
+
+/* 19 september: periode onder de kop van "Tested and proven" kleiner en cursief */
+h2 .sub { display: block; font-size: 0.55em; font-weight: 400; color: var(--text-muted); margin-top: 0.3em; }
+
+/* 22 september: aandeelhouders op Team, configuratietekening op Technology */
+.shareholders { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border-color); }
+.shareholders h3 { margin-top: 2rem; }
+.shareholders p { max-width: 72ch; }
+figure.wide { margin-top: 2.5rem; }
+figure.wide img { width: 100%; height: auto; border-radius: 10px; background: #fff; padding: 12px; box-sizing: border-box; }
