@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 bouw.py build)",
+      "Bash(python3 bouw.py check)",
+      "Bash(python3 bouw.py:*)",
+      "Bash(pip install -r requirements.txt)",
+      "Bash(pip3 install -r requirements.txt)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+      "Bash(git revert:*)",
+      "Bash(git merge:*)",
+      "Edit(bron/**)"
+    ],
+    "deny": [
+      "Edit(site/**)",
+      "Edit(bron/sjablonen/**)"
+    ]
+  }
+}
