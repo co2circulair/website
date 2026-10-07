@@ -24,4 +24,4 @@ When you email us, we keep your message and your email address to reply to you a
 The provider that hosts this website keeps standard server logs, which include the IP address of your device, for security and operations.
 
 ## sec1.p.4
-CO2CirculAir B.V., Utrechtseweg 27, 6862 AB Oosterbeek, the Netherlands, Chamber of Commerce 78096294, is responsible for this website. To see, correct or delete the data we hold about you, email <a href="mailto:berno@co2xair.nl">berno@co2xair.nl</a>.
+CO2CirculAir B.V., Utrechtseweg 27, 6862 AB Oosterbeek, the Netherlands, Chamber of Commerce 78096294, is responsible for this website. To see, correct or delete the data we hold about you, email <a href="mailto:berno@co2xair.nl">berno@co2xair.nl</a>. Last updated: October 2026.
