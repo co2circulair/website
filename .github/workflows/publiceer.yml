@@ -1,0 +1,45 @@
+# Publiceert co2circulair.com hooguit op de vaste momenten hieronder.
+# Elke publicatie kost 15 Netlify-credits (gratis abonnement: 300 per maand, daarna gaat de site offline).
+# - Is er in site/ niets veranderd sinds de vorige publicatie: er gebeurt niets, het kost niets.
+# - Maandplafond: na 12 publicaties wordt de rest van de maand overgeslagen.
+# Tweede moment toevoegen: een extra regel onder schedule, bijvoorbeeld "0 8 * * *" (10.00 uur zomertijd).
+# Met de hand publiceren (spoed): GitHub > Actions > Dagelijkse publicatie > Run workflow. Telt mee voor het plafond.
+name: Dagelijkse publicatie
+
+on:
+  schedule:
+    - cron: "0 15 * * *"   # 15.00 UTC = 17.00 uur Nederlandse zomertijd, 16.00 uur wintertijd
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: publiceer
+
+jobs:
+  publiceer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Publiceer als er iets klaarstaat
+        run: |
+          git config user.name "CO2CirculAir website"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main live
+          if git diff --quiet origin/live origin/main -- site/; then
+            echo "Niets nieuws op de site. Er is niets gepubliceerd en het kostte niets." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          MAAND=$(date -u +%Y-%m-01)
+          AANTAL=$(git log origin/live --since="$MAAND" --grep="^Publicatie" --format=%H | wc -l | tr -d ' ')
+          if [ "$AANTAL" -ge 12 ]; then
+            echo "Maandplafond bereikt: al $AANTAL publicaties deze maand. Niets gepubliceerd." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git checkout -B live origin/live
+          git merge --no-ff origin/main -m "Publicatie $((AANTAL + 1)) van $(date -u +%Y-%m)"
+          git push origin live
+          echo "Gepubliceerd: publicatie $((AANTAL + 1)) van deze maand." >> "$GITHUB_STEP_SUMMARY"
