@@ -198,7 +198,7 @@ A dedicated development and engineering plan is in place to reach these targets.
 Intellectual property
 
 ## ip.h2.1
-SMART-DAC is patented.
+SMART-DAC patent is pending.
 
 ## ip.p.1
 European patent <strong class="hl">EP 4 477 292 A1</strong> and international publication <strong class="hl">WO 2024/256349 A1</strong>, both published December 2024.
