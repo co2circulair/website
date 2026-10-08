@@ -23,8 +23,8 @@ DOCX = ROOT / "TEKST-MASTER.docx"
 PAGES = [  # (bestand, naam in de bron en in Word)
     ("index.html", "home"),
     ("technology.html", "technology"),
-    ("news.html", "news"),
     ("team.html", "team"),
+    ("news.html", "news"),
     ("contact.html", "contact"),
     ("privacy.html", "privacy"),
 ]
