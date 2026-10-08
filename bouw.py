@@ -24,6 +24,7 @@ PAGES = [  # (bestand, naam in de bron en in Word)
     ("index.html", "home"),
     ("technology.html", "technology"),
     ("team.html", "team"),
+    ("news.html", "news"),
     ("contact.html", "contact"),
     ("privacy.html", "privacy"),
 ]
