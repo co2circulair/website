@@ -21,7 +21,7 @@ Events, articles and progress of CO2CirculAir.
 October 2026
 
 ## item1.h3.1
-Our new website is live
+CO2CirculAir at the Carbon Capture Technology Expo in Hamburg
 
 ## item1.p.1
-The CO2CirculAir website is now live at co2circulair.com.
+From 20 to 22 October we visited the Carbon Capture Technology Expo in Hamburg. It was a great chance to meet others working on capturing CO2, to see where the field is heading, and to talk about SMART-DAC. We came home with new contacts and fresh ideas.
