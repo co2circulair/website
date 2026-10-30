@@ -24,4 +24,4 @@ October 2026
 CO2CirculAir at the Carbon Capture Technology Expo in Hamburg
 
 ## item1.p.1
-We recently visited the Carbon Capture Technology Expo in Hamburg. It was a great chance to meet others working on capturing CO2, to see where the field is heading, and to talk about SMART-DAC. We came home with new contacts and fresh ideas.
+From 20 to 22 October we visited the Carbon Capture Technology Expo in Hamburg. It was a great chance to meet others working on capturing CO2, to see where the field is heading, and to talk about SMART-DAC. We came home with new contacts and fresh ideas.
