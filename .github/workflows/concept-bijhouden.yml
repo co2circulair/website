@@ -1,0 +1,38 @@
+# Houdt de conceptversie (branch concept) gelijk met de live site.
+# Elke wijziging op main gaat automatisch ook naar concept, zodat de conceptlink
+# altijd de complete, actuele site laat zien plus de pagina's die nog niet live staan.
+# Botst iets, dan stopt het en krijgt Andrea een melding (issue); er gaat niets live.
+# De conceptversie kost geen Netlify-credits.
+name: Conceptversie bijhouden
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  bijhouden:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: main samenvoegen in concept
+        run: |
+          git config user.name "CO2CirculAir website"
+          git config user.email "220704349+aindrea-myself@users.noreply.github.com"
+          git checkout concept
+          git merge --no-edit origin/main -m "Conceptversie bijgewerkt met de live site"
+          git push origin concept
+      - name: Melding aan Andrea als het niet lukt
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" --assignee aindrea-myself \
+            --title "Conceptversie kon niet worden bijgewerkt" \
+            --body "Een wijziging op de live site botst met de conceptversie. Er is niets live gezet. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
