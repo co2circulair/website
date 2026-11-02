@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{head.title.1}}</title>
+<meta name="description" content="{{head.description}}">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/concept.css">
+<meta name="robots" content="noindex, nofollow">
+<style>
+    .routes{display:grid;gap:1rem;margin:2rem 0 0;padding:0;list-style:none}
+  @media (min-width:700px){.routes{grid-template-columns:repeat(3,1fr)}}
+  .routes a{display:block;text-decoration:none;color:inherit;border:1px solid var(--border-color);border-radius:10px;padding:1.1rem 1.2rem;background:var(--bg-subtle);transition:border-color .2s}
+  .routes a:hover{border-color:var(--green-dark)}
+  .routes .route-nr{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+  .routes strong{display:block;font-size:1.15rem;margin:.25rem 0 .35rem}
+  .routes span.ex{color:var(--text-muted);font-size:.95rem}
+  .flow{display:flex;align-items:center;gap:.75rem;margin-top:1.5rem;color:var(--text-muted);font-size:.95rem;flex-wrap:wrap}
+  .flow b{color:var(--green-dark)}
+  .sub-h{margin-top:1.75rem}
+  .col h1,.col h2{max-width:none}
+  .lede + .lede{margin-top:.75rem}
+  .same-h{color:var(--green-dark);font-size:1.05rem;font-weight:600;margin-top:1.5rem}
+  .schema-wrap{margin-top:.5rem}
+  .routes-schema a{cursor:pointer;text-decoration:none}
+  .routes-schema a text{text-decoration:none}
+  .routes-schema a:hover rect{stroke:var(--green-light)}
+  @media (min-width:700px){.routes{display:none}}
+  @media (max-width:699px){.schema-wrap{display:none}}
+</style>
+</head>
+<body id="top">
+
+<div class="concept-banner">Concept page, not live yet. <a href="concept.html">All concept pages</a></div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="site-logo" href="index.html">
+      <img src="img/logo-co2circulair-200.png" alt="CO2CirculAir">
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu"><span></span></label>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <nav class="toc toc-bar" aria-label="On this page">
+    <p class="toc-title">{{head.p.1}}</p>
+    <ul>
+      <li>{{head.li.1}}</li>
+      <li>{{head.li.2}}</li>
+      <li>{{head.li.3}}</li>
+      <li>{{head.li.4}}</li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="col">
+      <span class="kicker">{{sec1.kicker.1}}</span>
+      <h1>{{sec1.h1.1}}</h1>
+      <p class="lede">{{sec1.p.1}}</p>
+      <p class="lede">{{sec1.p.2}}</p>
+      </div>
+
+      <div class="schema-wrap">
+      <svg class="process routes-schema" viewBox="0 0 1100 440" role="img" aria-labelledby="routes-title" xmlns="http://www.w3.org/2000/svg">
+        <title id="routes-title">CO2 captured from the air by SMART-DAC, 99.5 percent pure, goes four ways: direct use in greenhouses and other markets; an energy carrier such as e-methanol, e-methane or e-SAF; long-lasting materials; or underground storage.</title>
+        <defs>
+          <marker id="arrow-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#565f54"/>
+          </marker>
+        </defs>
+        <g font-family="Inter, Arial, sans-serif" font-size="15" fill="#2b322a">
+          <rect x="20" y="160" width="230" height="120" rx="6" fill="#ffffff" stroke="#529f3f" stroke-width="2"/>
+          <text x="135" y="200" text-anchor="middle" font-weight="700" fill="#141813">CO2 from the air</text>
+          <text x="135" y="224" text-anchor="middle">SMART-DAC, on site</text>
+          <text x="135" y="256" text-anchor="middle" font-weight="700" fill="#529f3f">99.5% pure</text>
+          <path d="M 250 220 C 300 220, 305 63, 350 63" fill="none" stroke="#565f54" stroke-width="2" marker-end="url(#arrow-r)"/>
+          <path d="M 250 220 C 300 220, 305 170, 350 170" fill="none" stroke="#565f54" stroke-width="2" marker-end="url(#arrow-r)"/>
+          <path d="M 250 220 C 300 220, 305 277, 350 277" fill="none" stroke="#565f54" stroke-width="2" marker-end="url(#arrow-r)"/>
+          <path d="M 250 220 C 300 220, 305 384, 350 384" fill="none" stroke="#565f54" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow-r)"/>
+          <a href="#direct">
+            <rect x="360" y="20" width="380" height="86" rx="6" fill="#ffffff" stroke="#9ed26d" stroke-width="2"/>
+            <text x="380" y="52" font-size="12" fill="#565f54">ROUTE 1</text>
+            <text x="450" y="52" font-weight="700" fill="#141813">Direct use</text>
+            <text x="380" y="82">greenhouses, beverages, food, manufacturing</text>
+          </a>
+          <a href="#energy">
+            <rect x="360" y="127" width="380" height="86" rx="6" fill="#ffffff" stroke="#9ed26d" stroke-width="2"/>
+            <text x="380" y="159" font-size="12" fill="#565f54">ROUTE 2</text>
+            <text x="450" y="159" font-weight="700" fill="#141813">Energy carrier</text>
+            <text x="380" y="189">e-methanol, e-methane, e-SAF</text>
+          </a>
+          <a href="#materials">
+            <rect x="360" y="234" width="380" height="86" rx="6" fill="#ffffff" stroke="#9ed26d" stroke-width="2"/>
+            <text x="380" y="266" font-size="12" fill="#565f54">ROUTE 3</text>
+            <text x="450" y="266" font-weight="700" fill="#141813">Long-lasting materials</text>
+            <text x="380" y="296">plastics, building materials, carbon products</text>
+          </a>
+          <a href="#storage">
+            <rect x="360" y="341" width="380" height="86" rx="6" fill="#ffffff" stroke="#9ed26d" stroke-width="2" stroke-dasharray="6 5"/>
+            <text x="380" y="373" font-size="12" fill="#565f54">ROUTE 4</text>
+            <text x="450" y="373" font-weight="700" fill="#141813">Storage</text>
+            <text x="380" y="403">underground (CCS)</text>
+          </a>
+          <line x1="740" y1="63" x2="790" y2="63" stroke="#565f54" stroke-width="2" marker-end="url(#arrow-r)"/>
+          <text x="800" y="58" font-weight="700" fill="#141813">Used as CO2</text>
+          <text x="800" y="80" fill="#565f54">produced on demand</text>
+          <line x1="740" y1="170" x2="790" y2="170" stroke="#565f54" stroke-width="2" marker-end="url(#arrow-r)"/>
+          <text x="800" y="165" font-weight="700" fill="#141813">Fuel and storage</text>
+          <text x="800" y="187" fill="#565f54">of sustainable energy</text>
+          <line x1="740" y1="277" x2="790" y2="277" stroke="#565f54" stroke-width="2" marker-end="url(#arrow-r)"/>
+          <text x="800" y="272" font-weight="700" fill="#141813">Carbon that stays put</text>
+          <text x="800" y="294" fill="#565f54">for decades</text>
+          <line x1="740" y1="384" x2="790" y2="384" stroke="#565f54" stroke-width="2" marker-end="url(#arrow-r)"/>
+          <text x="800" y="379" font-weight="700" fill="#141813">Stored</text>
+          <text x="800" y="401" fill="#565f54">possible, not the preferred use</text>
+        </g>
+      </svg>
+      </div>
+
+      <ul class="routes">
+        <li>{{sec1.li.1}}</li>
+        <li>{{sec1.li.2}}</li>
+        <li>{{sec1.li.3}}</li>
+        <li>{{sec1.li.4}}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-subtle" id="direct">
+    <div class="container">
+      <div class="col">
+      <span class="kicker">{{direct.kicker.1}}</span>
+      <h2>{{direct.h2.1}}</h2>
+      <p class="measure">{{direct.p.1}}</p>
+      <p class="measure">{{direct.p.2}}</p>
+      <h3 class="sub-h same-h">{{direct.h3.1}}</h3>
+      <p class="measure">{{direct.p.3}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="energy">
+    <div class="container">
+      <div class="col">
+      <span class="kicker">{{energy.kicker.1}}</span>
+      <h2>{{energy.h2.1}}</h2>
+      <p class="measure">{{energy.p.1}}</p>
+      <p class="measure">{{energy.p.2}}</p>
+      <h3 class="sub-h same-h">{{energy.h3.1}}</h3>
+      <p class="measure">{{energy.p.3}}</p>
+      <p class="measure">{{energy.p.4}}</p>
+      <h3 class="sub-h">{{energy.h3.2}}</h3>
+      <p class="measure">{{energy.p.5}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-subtle" id="materials">
+    <div class="container">
+      <div class="col">
+      <span class="kicker">{{materials.kicker.1}}</span>
+      <h2>{{materials.h2.1}}</h2>
+      <p class="measure">{{materials.p.1}}</p>
+      <p class="measure">{{materials.p.2}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="storage">
+    <div class="container">
+      <div class="col">
+      <span class="kicker">{{storage.kicker.1}}</span>
+      <h2>{{storage.h2.1}}</h2>
+      <p class="measure">{{storage.p.1}}</p>
+      <p class="measure">{{storage.p.2}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <span class="kicker">{{cta.kicker.1}}</span>
+      <h2>{{cta.h2.1}}</h2>
+      <p>{{cta.p.1}}</p>
+      <p><a class="btn btn-primary" href="contact.html">{{cta.btn.1}}</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <img src="img/logo-co2circulair-200.png" alt="CO2CirculAir">
+      <p>Smart Direct Air Capture. Green CO2 made from air, with wind and electricity, where it is needed.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>CO2CirculAir B.V.</p>
+      <p>Utrechtseweg 27, 6862 AB Oosterbeek</p>
+      <p><a href="mailto:berno@co2xair.nl">berno@co2xair.nl</a></p>
+      <p>KVK 78096294</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

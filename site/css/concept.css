@@ -1,0 +1,6 @@
+/* Alleen op conceptpagina's: een balk dat de pagina nog niet live staat. */
+.concept-banner { background: #F2C94C; color: #1a1a1a; text-align: center; font-size: .9rem; padding: .55rem 1rem; font-weight: 600; }
+.concept-banner a { color: #1a1a1a; text-decoration: underline; }
+.concept-list { list-style: none; padding: 0; margin-top: 2rem; display: grid; gap: 1.25rem; max-width: 62ch; }
+.concept-list a { color: var(--green-dark); }
+.concept-list .ex { color: var(--text-muted); }

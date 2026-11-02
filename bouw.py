@@ -25,6 +25,12 @@ PAGES = [  # (bestand, naam in de bron en in Word)
     ("technology.html", "technology"),
     ("team.html", "team"),
     ("news.html", "news"),
+    # Conceptpagina's (alleen op de branch concept, nog niet live)
+    ("markets.html", "markets"),
+    ("legislation.html", "legislation"),
+    ("partners.html", "partners"),
+    ("about.html", "about"),
+    ("investors.html", "investors"),
     ("contact.html", "contact"),
     ("privacy.html", "privacy"),
 ]
