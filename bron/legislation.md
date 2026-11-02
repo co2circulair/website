@@ -15,7 +15,7 @@ Legislation
 How DAC CO2 fits into EU legislation.
 
 ## sec1.p.1
-[Introduction: one paragraph.]
+On this page you will find the legislation framework for DAC CO2 captured from the atmosphere.
 
 ## sec1.p.2
 Berno: schrijf hier na je gesprek over wetgeving een korte inleiding. De drie blokken hieronder volgen jouw drie belangrijkste vragen aan Franklin (1, 3 en 5).
@@ -24,10 +24,10 @@ Berno: schrijf hier na je gesprek over wetgeving een korte inleiding. De drie bl
 Framework
 
 ## sec2.h2.1
-Where DAC CO2 sits in EU climate legislation.
+DAC related legislation in the European Union
 
 ## sec2.p.1
-[Text]
+The EU recognises DAC as a necessary but still immature part of its climate policy. The building blocks (certification, storage targets, strategy) are in place. The decisive step, structural funding through the EU ETS or a separate removal target, is still subject to political decision-making.
 
 ## sec2.p.2
 Jouw vraag 1: waar staat DAC-CO2 in de EU-wetgeving, en bevoordeelt een instrument het boven fossiele en industriële CO2?
