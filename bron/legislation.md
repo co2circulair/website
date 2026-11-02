@@ -18,7 +18,7 @@ How DAC CO2 fits into EU legislation.
 [Introduction: one paragraph.]
 
 ## sec1.p.2
-Berno: schrijf hier na je gesprek over wetgeving een korte inleiding. De blokken hieronder volgen jouw eigen vragen uit je mail aan Franklin.
+Berno: schrijf hier na je gesprek over wetgeving een korte inleiding. De drie blokken hieronder volgen jouw drie belangrijkste vragen aan Franklin (1, 3 en 5).
 
 ## sec2.kicker.1
 Framework
@@ -30,10 +30,10 @@ Where DAC CO2 sits in EU climate legislation.
 [Text]
 
 ## sec2.p.2
-Jouw vraag: waar staat DAC-CO2 in de EU-wetgeving, en is er een instrument dat het beloont boven fossiele en industriële CO2?
+Jouw vraag 1: waar staat DAC-CO2 in de EU-wetgeving, en bevoordeelt een instrument het boven fossiele en industriële CO2?
 
 ## sec3.kicker.1
-Fuels and products
+Fuels
 
 ## sec3.h2.1
 Renewable fuels and DAC CO2.
@@ -42,28 +42,16 @@ Renewable fuels and DAC CO2.
 [Text]
 
 ## sec3.p.2
-Jouw vraag: blijft DAC-CO2 onder RED III en ReFuelEU Aviation op lange termijn toegestaan, terwijl CO2 uit industriële bronnen wordt uitgefaseerd?
+Jouw vraag 3: blijft DAC-CO2 onder de RFNBO-regels op lange termijn toegestaan, en geeft dat nu al een echt voordeel?
 
 ## sec4.kicker.1
-Shipping
+EU ETS and permanence
 
 ## sec4.h2.1
-E-fuels at sea.
+Using CO2 or storing it.
 
 ## sec4.p.1
 [Text]
 
 ## sec4.p.2
-Jouw vraag: hoe worden brandstoffen met DAC-CO2 behandeld onder FuelEU Maritime en het EU ETS voor scheepvaart?
-
-## sec5.kicker.1
-Certification
-
-## sec5.h2.1
-Certifying CO2 from the air.
-
-## sec5.p.1
-[Text]
-
-## sec5.p.2
-Jouw vraag: welke rol speelt het Carbon Removal Certification Framework (CRCF) voor DAC?
+Jouw vraag 5: hoe behandelt het EU ETS CO2 in e-fuels tegenover CO2 die permanent gebonden is?
