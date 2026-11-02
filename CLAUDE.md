@@ -20,7 +20,7 @@ Waarom: elke publicatie kost 15 credits van de 300 per maand op het gratis Netli
 3. Pas het aan in een aparte branch, nooit rechtstreeks op `main` of `live`. Bouw en controleer:
    - `pip install -r requirements.txt` als dat in deze sessie nog niet gebeurd is;
    - `python3 bouw.py build`;
-   - `python3 bouw.py check`: alle vijf pagina's moeten "identiek" zijn. Is dat niet zo, stop dan en zeg het Berno.
+   - `python3 bouw.py check`: alle pagina's moeten "identiek" zijn. Is dat niet zo, stop dan en zeg het Berno.
 4. Maak een pull request naar `main`. Netlify maakt een **voorbeeldversie** met een eigen link, meestal `https://deploy-preview-<nummer>--smart-dac.netlify.app`. Geef Berno die link: "Hier kun je kijken hoe het eruitziet. Er staat nog niets live."
 5. Wil Berno nog meer aanpassen, doe dat in dezelfde pull request.
 6. Zegt Berno "zet live", voeg de pull request dan samen met `main`. Zeg daarna: "Je wijziging staat klaar. Om 17.00 uur gaat alles wat klaarstaat in één keer live. Hoe de site er dan uitziet, zie je nu al op https://main--smart-dac.netlify.app"
