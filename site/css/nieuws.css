@@ -1,0 +1,21 @@
+/* Punten en tijdlijn op de Legislation-pagina, gevuld uit nieuws/nieuws.json (zie CLAUDE.md "Nieuwsoverzicht"). */
+.positions { display: grid; gap: 1.5rem; margin-top: 2rem; padding: 0; list-style: none; }
+@media (min-width: 800px) { .positions { grid-template-columns: 1fr 1fr; } }
+.positions li { background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--green-light); border-radius: 10px; padding: 1.5rem 1.5rem 1.25rem; }
+.positions h3, .timeline h3 { font-size: var(--step-1); margin: 0.75rem 0 0.5rem; max-width: none; }
+.positions p, .timeline p { margin: 0 0 0.75rem; max-width: 70ch; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 999px; padding: 0.2rem 0.65rem; background: #2c332b; color: #c3cbbf; }
+.tag.inforce { background: #1f3a17; color: #9ed26d; }
+.tag.proposal { background: #3d3014; color: #f0c56a; }
+.tag.check { background: #3f1d1b; color: #f3a29c; }
+.tag.region { background: transparent; color: var(--text-body); box-shadow: inset 0 0 0 1px #5a6457; }
+.source { font-size: var(--step--1); color: var(--text-muted); }
+.source a { color: var(--green-dark); }
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; font-size: var(--step--1); color: var(--text-muted); margin-top: 1.5rem; }
+.timeline { list-style: none; padding: 0; margin: 2rem 0 0; border-left: 2px solid var(--border-color); }
+.timeline li { position: relative; padding: 0 0 2rem 1.75rem; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: 0.35rem; width: 12px; height: 12px; border-radius: 50%; background: var(--green-light); border: 2px solid var(--bg-page); }
+.timeline time { display: block; font-size: var(--step--1); font-weight: 700; color: var(--green-dark); margin-bottom: 0.25rem; }
+.timeline h3 { margin-top: 0.5rem; }
+.new-mark { display: block; font-size: var(--step--1); font-style: italic; color: #f0c56a; margin-bottom: 0.4rem; }

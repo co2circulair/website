@@ -53,6 +53,21 @@ Wat je bij conceptpagina's nooit doet: `concept` samenvoegen met `main` of `live
 
 Het verschil, kort: een wijziging aan een pagina die al live staat, zet Berno zelf live met "zet live" (om 17.00 uur). Een conceptpagina gaat pas live na controle door Andrea.
 
+## Nieuwsoverzicht: Berno kiest met vakjes wat er op de Legislation-pagina staat
+
+Om de twee weken krijgt Berno van Andrea een Word-document "Nieuwsoverzicht" met aanklikbare vakjes: per punt houden, aanpassen of weghalen, en bij nieuwe punten plaatsen of niet. De punten zelf staan in `nieuws/nieuws.json`; `bouw.py` zet ze op de pagina. Geeft Berno je dat document, of een foto of scan van een geprinte versie:
+
+1. Zet het bestand buiten de repository, in `/tmp/`. Nooit in de repository: die is openbaar en het document bevat Berno's opmerkingen. Zijn opmerkingen komen ook niet in `nieuws.json`.
+2. Werk in de conceptversie zolang Legislation een conceptpagina is (zie "Conceptpagina's"); daarna zoals bij een live pagina.
+3. Lees het uit: `python3 nieuws/nieuws.py lees /tmp/<bestand>.docx`. Dat verandert niets. Vertel Berno in gewone taal wat er gaat gebeuren, per punt in één regel. Staat er bij een punt geen vakje of staan er twee, vraag dan wat hij bedoelt.
+   Een foto of scan: lees de vinkjes zelf af, noem ze per punt en laat Berno bevestigen. Pas daarna `status` in `nieuws/nieuws.json` aan (houden: niets; weghalen of niet: `weg`; plaatsen: `op-pagina`).
+4. Na zijn ja: `python3 nieuws/nieuws.py lees /tmp/<bestand>.docx --toepassen`.
+5. **Aanpassen:** herschrijf in `nieuws/nieuws.json` bij dat punt `titel` en `tekst` (Engels, voor de site) en `nl` (Nederlands, voor het overzicht) zoals Berno in zijn opmerking vraagt. Houd de strekking, voeg niets toe wat hij niet schreef, laat oud en nieuw zien en sla pas op na zijn ja.
+6. **Eigen punten** (onderaan, "Zelf iets toevoegen"): zet ze in `nieuws/nieuws.json` als nieuw punt met `"blok": "tijdlijn"`, `"status": "voorstel"`, `"check": true`, de datum van het bericht, zijn link als `bron` en zijn omschrijving als `nl`. Zeg Berno: "Andrea zoekt de bron na en zet het in het volgende overzicht." Zet het niet zelf op de pagina.
+7. Bouw en zet het door zoals hierboven: `python3 bouw.py build`, dan opslaan en doorzetten met de vaste zin.
+
+Nooit: `toon_voorstellen` in `nieuws.json` veranderen (dat doet Andrea bij de livegang), punten uit `nieuws.json` verwijderen (weghalen is `"status": "weg"`), of een bron of datum invullen die Berno niet gaf.
+
 ## Terugzetten
 
 Zegt Berno "zet het terug", maak dan de laatste wijziging ongedaan (revert) via een pull request naar `main`, bouw en controleer zoals hierboven, en voeg samen. Om 17.00 uur gaat de herstelde versie live. Is het dringend, verwijs dan naar Andrea.

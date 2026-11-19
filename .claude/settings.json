@@ -18,7 +18,9 @@
       "Bash(git fetch:*)",
       "Bash(git revert:*)",
       "Bash(git merge:*)",
-      "Edit(bron/**)"
+      "Edit(bron/**)",
+      "Bash(python3 nieuws/nieuws.py:*)",
+      "Edit(nieuws/nieuws.json)"
     ],
     "deny": [
       "Edit(site/**)",

@@ -145,6 +145,9 @@ def build_page(fname, page, outdir):
     if missing or extra:
         sys.exit(f"{page}: ontbreekt in bron {sorted(missing)}, niet in sjabloon {sorted(extra)}")
     out = re.sub(r"\{\{([^}]+)\}\}", lambda m: items[m.group(1)], tpl)
+    if "<!--NIEUWS:" in out:  # punten uit nieuws/nieuws.json, zie CLAUDE.md "Nieuwsoverzicht"
+        from nieuws.nieuws import invullen
+        out = invullen(out)
     tmp = outdir / (fname + ".tmp")  # schrijven via tijdelijk bestand, overschrijven bleek traag
     tmp.write_text(out, encoding="utf-8")
     tmp.replace(outdir / fname)
