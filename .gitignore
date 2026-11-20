@@ -3,3 +3,7 @@ __pycache__/
 .env
 .netlify/
 TEKST-MASTER.docx
+nieuws/edities/
+nieuws/terug/
+*.docx
+!site/nieuwsoverzicht.docx
