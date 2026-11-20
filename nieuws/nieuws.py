@@ -40,6 +40,7 @@ RECHT = {"In force", "Proposal"}
 TOEPASSING = {"Greenhouses", "Fuels", "Chemicals & materials", "Food & beverage", "Storage", "All uses"}
 NIEUW_VELDEN = ["id", "blok", "regio", "titel", "tekst", "nl", "rechtskracht", "toepassing", "bron"]  # plus datum, check
 KANS_VELDEN = ["id", "regio", "titel", "wat", "waarom", "datum", "plaats", "link", "bron"]  # plus deadline
+# Taal: titel en plaats in het Engels (komen in de mail aan Berno), wat en waarom in het Nederlands (chat en leesversie).
 KEUZES = {
     "op-pagina": {"houden": None, "aanpassen": None, "weghalen": "weg"},
     "voorstel": {"plaatsen": "op-pagina", "niet": "weg"},
@@ -363,8 +364,10 @@ def mail():
     if not (voor or kansen):
         print("No new developments or opportunities in the last two weeks. Nothing to choose this time.\n")
     else:
-        print(f"The news overview of {datum} is ready: {len(voor)} proposal(s) for the Legislation page "
-              f"and {len(kansen)} opportunity(ies) to present SMART-DAC.\n")
+        def tel(n, een, meer):
+            return f"{n} {een if n == 1 else meer}"
+        print(f"The news overview of {datum} is ready: {tel(len(voor), 'proposal', 'proposals')} for the Legislation page "
+              f"and {tel(len(kansen), 'opportunity', 'opportunities')} to present SMART-DAC.\n")
         for r in REGIO:
             rv = [p for p in voor if p["regio"] == r]
             rk = [k for k in kansen if k["regio"] == r]
