@@ -1,7 +1,7 @@
 {
   "_uitleg": "Punten op de Legislation-pagina en kansen voor Berno, per regio (Benelux, Europe, World). Werkwijze: CLAUDE.md, sectie 'Nieuwsoverzicht'. blok: fuels, ets, benelux, wereld of tijdlijn. status punt: op-pagina, voorstel of weg; status kans: nieuw, getoond of weg. toon_voorstellen: true tot de eerste livegang van Legislation (zet-live.py zet hem dan op false). Geen opmerkingen of keuzes van Berno over kansen hierin: deze repository is openbaar.",
   "toon_voorstellen": true,
-  "laatste_check": null,
+  "laatste_check": "2026-11-20",
   "punten": [
     {
       "id": "sde-dac",
@@ -127,7 +127,41 @@
         "extra": null
       },
       "geschiedenis": []
+    },
+    {
+      "id": "innovation-fund-dac-2026-10",
+      "blok": "tijdlijn",
+      "regio": "Europe",
+      "datum": "2026-10-19",
+      "titel": "EU Innovation Fund backs its first direct air capture project",
+      "tekst": "The European Commission selected 77 net-zero technology projects for 3.4 billion euro in grants. For the first time this includes a direct air capture project with storage: Furu in Norway, about 4,000 tonnes of CO2 per year.",
+      "nl": "De Europese Commissie geeft 3,4 miljard euro aan 77 projecten. Voor het eerst zit daar een DAC-project bij, met opslag: Furu in Noorwegen, ongeveer 4.000 ton CO2 per jaar. De volgende oproep verwacht de Commissie begin december.",
+      "rechtskracht": "In force",
+      "toepassing": [
+        "Storage"
+      ],
+      "check": true,
+      "bron": {
+        "tekst": "European Commission, 19 October 2026, via S&P Global",
+        "url": "https://www.spglobal.com/energy/en/news-research/latest-news/energy-transition/101926-eu-commits-34b-to-77-net-zero-technology-projects"
+      },
+      "status": "voorstel",
+      "geschiedenis": []
     }
   ],
-  "kansen": []
+  "kansen": [
+    {
+      "id": "award-best-co2-utilisation-2027",
+      "regio": "Europe",
+      "titel": "Innovation award Best CO2 Utilisation 2027",
+      "wat": "Prijs voor de beste CO2-toepassing, uitgereikt op de CO2-based Fuels and Chemicals Conference (nova-Institut), 21 en 22 april 2027 in Keulen, ook online. Posters kunnen tot begin april.",
+      "waarom": "Zichtbaarheid bij de Europese CCU-gemeenschap; het congres staat ook in de agenda van CO2 Value Europe.",
+      "datum": "2027-04-21",
+      "deadline": "2027-02-01",
+      "plaats": "Cologne, also online",
+      "link": "https://renewable-carbon.eu/news/?p=178525",
+      "bron": "https://co2value.eu/event/co2-based-fuels-and-chemicals-conference-2027/",
+      "status": "nieuw"
+    }
+  ]
 }
