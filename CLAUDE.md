@@ -75,7 +75,8 @@ Zegt Berno "nieuwsoverzicht" (of vraagt hij naar het nieuws of de kansen):
 4. Vat aan het eind samen wat er verandert en vraag "Klopt dit?". Pas na zijn ja: per punt `python3 nieuws/nieuws.py kies <id> <keuze>` (houden, aanpassen, weghalen, plaatsen, niet, interessant).
 5. **Aanpassen:** herschrijf in `nieuws/nieuws.json` bij dat punt `titel` en `tekst` (Engels) en `nl` (Nederlands) zoals Berno vraagt. Houd de strekking, voeg niets toe wat hij niet zei, laat oud en nieuw zien en sla pas op na zijn ja.
 6. **Eigen punt van Berno:** `python3 nieuws/nieuws.py nieuw '<json>'` met `"check": true` en de bron die hij geeft; bij geen bron: "Waar heb je het gelezen?" Zet niets op de pagina zonder bron.
-7. `python3 bouw.py build`, `python3 bouw.py check`, commit en `git push origin concept`. Staat Legislation al live en wil Berno het nu op de site: volg "Een conceptpagina live zetten" met `legislation`.
+7. **Wat hij vaker of minder wil zien.** Vraag aan het eind één keer: "Wil je volgende keer ergens meer of minder van zien?" Zegt hij iets, zet het dan als één regel met datum in `nieuws/voorkeuren.md`, alleen op onderwerpniveau (regio, soort kans, toepassing), bijvoorbeeld "2026-12-04: minder Wereld, meer tuinbouwbeurzen". Nooit welke kans hij kiest of waar hij zich aanmeldt: deze repository is openbaar.
+8. `python3 bouw.py build`, `python3 bouw.py check`, commit en `git push origin concept`. Staat Legislation al live en wil Berno het nu op de site: volg "Een conceptpagina live zetten" met `legislation`.
 
 Nooit: Berno's keuze over een kans of zijn opmerkingen opslaan (deze repository is openbaar), punten uit `nieuws.json` verwijderen (weghalen is de keuze `weghalen`), `toon_voorstellen` of `laatste_check` veranderen, of een bron of datum invullen die niet in een bron staat.
 
