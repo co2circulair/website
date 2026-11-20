@@ -57,13 +57,13 @@ Using CO2 or storing it.
 Jouw vraag 5: hoe behandelt het EU ETS CO2 in e-fuels tegenover CO2 die permanent gebonden is?
 
 ## sec5.kicker.1
-Netherlands
+Benelux
 
 ## sec5.h2.1
-Subsidy for CO2 from the air in the Netherlands.
+What applies in the Netherlands, Belgium and Luxembourg.
 
 ## sec5.p.1
-Vraag aan Berno: hoort Nederland op deze pagina? De kop zegt "EU legislation". Zo niet, dan gaat dit blok weg en komt het SDE++-punt alleen bij het nieuws.
+Vraag aan Berno: hoort de Benelux op deze pagina? De kop zegt "EU legislation". Zo niet, dan gaat dit blok weg en komen de Benelux-punten alleen bij het nieuws.
 
 ## sec6.kicker.1
 Latest developments
@@ -72,4 +72,4 @@ Latest developments
 What changed in the last weeks.
 
 ## sec6.p.1
-Hier komt om de twee weken het nieuws dat jij in het Word-overzicht kiest. Een gele regel betekent: voorgesteld, nog niet gekozen.
+Hier komt om de twee weken het nieuws dat jij kiest: zeg in je Claude-app "nieuwsoverzicht". Een gele regel betekent: voorgesteld, nog niet gekozen.

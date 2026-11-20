@@ -20,7 +20,8 @@
       "Bash(git merge:*)",
       "Edit(bron/**)",
       "Bash(python3 nieuws/nieuws.py:*)",
-      "Edit(nieuws/nieuws.json)"
+      "Edit(nieuws/nieuws.json)",
+      "Bash(python3 zet-live.py:*)"
     ],
     "deny": [
       "Edit(site/**)",

@@ -34,6 +34,9 @@ PAGES = [  # (bestand, naam in de bron en in Word)
     ("contact.html", "contact"),
     ("privacy.html", "privacy"),
 ]
+# Alleen pagina's waarvan bron en sjabloon in deze versie bestaan: de live versie (main) heeft minder
+# pagina's dan de conceptversie, en zo is bouw.py op beide gelijk (zie zet-live.py).
+PAGES = [(f, p) for f, p in PAGES if (BRON / f"{p}.md").exists() and (SJAB / f).exists()]
 
 # Delen van de pagina die in het sjabloon blijven (navigatie, voettekst, inhoudsopgave, tekening).
 SKIP_BLOCKS = re.compile(
