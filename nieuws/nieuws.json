@@ -1,0 +1,167 @@
+{
+  "_uitleg": "Punten op de Legislation-pagina en kansen voor Berno, per regio (Benelux, Europe, World). Werkwijze: CLAUDE.md, sectie 'Nieuwsoverzicht'. blok: fuels, ets, benelux, wereld of tijdlijn. status punt: op-pagina, voorstel of weg; status kans: nieuw, getoond of weg. toon_voorstellen: true tot de eerste livegang van Legislation (zet-live.py zet hem dan op false). Geen opmerkingen of keuzes van Berno over kansen hierin: deze repository is openbaar.",
+  "toon_voorstellen": true,
+  "laatste_check": "2026-11-20",
+  "punten": [
+    {
+      "id": "sde-dac",
+      "blok": "benelux",
+      "regio": "Benelux",
+      "status": "op-pagina",
+      "titel": "The Netherlands subsidises CO2 captured from the air",
+      "tekst": "The Dutch SDE++ operating subsidy has a category for CO2 captured from the air and used for CO2 fertilisation in greenhouses. From the 2026 round there is also a category for CO2 from the air that is stored permanently.",
+      "nl": "De SDE++ heeft een categorie voor CO2 uit de lucht voor de kas, en sinds de ronde van 2026 ook voor opslag.",
+      "rechtskracht": "In force",
+      "toepassing": [
+        "Greenhouses",
+        "Storage"
+      ],
+      "check": false,
+      "bron": {
+        "tekst": "Staatscourant 2026, 25954",
+        "url": "https://zoek.officielebekendmakingen.nl/stcrt-2026-25954.html",
+        "extra": "articles 79 and 85"
+      },
+      "geschiedenis": []
+    },
+    {
+      "id": "brandstoffen-dac",
+      "blok": "fuels",
+      "regio": "Europe",
+      "status": "op-pagina",
+      "titel": "CO2 from the air stays eligible for renewable fuels",
+      "tekst": "Under the EU rules for renewable fuels of non-biological origin (RFNBOs) and low-carbon fuels, CO2 captured from the air counts as a carbon source without an end date. CO2 from fossil industry does have an end date.",
+      "nl": "In de EU-regels voor groene brandstoffen telt CO2 uit de lucht als bron zonder einddatum; fossiele CO2 uit de industrie heeft wel een einddatum.",
+      "rechtskracht": "In force",
+      "toepassing": [
+        "Fuels"
+      ],
+      "check": true,
+      "bron": {
+        "tekst": "Delegated Regulations (EU) 2023/1185 and 2025/2359, via CO2 Value Europe",
+        "url": null,
+        "extra": null
+      },
+      "geschiedenis": []
+    },
+    {
+      "id": "ets-nulfactor",
+      "blok": "ets",
+      "regio": "Europe",
+      "status": "op-pagina",
+      "titel": "Zero emission factor for CO2 from the air in the EU ETS",
+      "tekst": "The proposal for the revision of the EU Emissions Trading System (ETS) of 17 July 2026 gives CO2 captured from the atmosphere an emission factor of zero (recital 81).",
+      "nl": "Het voorstel voor de herziening van het EU-emissiehandelssysteem (ETS) van 17 juli 2026 geeft CO2 uit de lucht een emissiefactor nul. Nog geen wet.",
+      "rechtskracht": "Proposal",
+      "toepassing": [
+        "All uses"
+      ],
+      "check": true,
+      "bron": {
+        "tekst": "European Commission proposal, 17 July 2026, via CO2 Value Europe",
+        "url": null,
+        "extra": null
+      },
+      "geschiedenis": []
+    },
+    {
+      "id": "crcf-permanent",
+      "blok": "ets",
+      "regio": "Europe",
+      "status": "op-pagina",
+      "titel": "Removal certificates only for permanent storage",
+      "tekst": "Under the EU Carbon Removal Certification Framework (CRCF), certificates apply to permanent removals, such as underground storage or binding in building materials. CO2 used in greenhouses or fuels does not earn removal certificates.",
+      "nl": "Certificaten voor CO2-verwijdering (CRCF) gelden alleen voor permanente opslag of binding in bouwmaterialen, niet voor kas of brandstof.",
+      "rechtskracht": "In force",
+      "toepassing": [
+        "Storage",
+        "Chemicals & materials"
+      ],
+      "check": false,
+      "bron": {
+        "tekst": "European Commission, 3 February 2026",
+        "url": "https://climate.ec.europa.eu/news-other-reads/news/eu-sets-worlds-first-voluntary-standard-permanent-carbon-removals-2026-02-03_en",
+        "extra": null
+      },
+      "geschiedenis": []
+    },
+    {
+      "id": "sde-2026-gepubliceerd",
+      "blok": "tijdlijn",
+      "regio": "Benelux",
+      "status": "voorstel",
+      "datum": "2026-08-03",
+      "titel": "SDE++ 2026 published, with a category for storage of CO2 from the air",
+      "tekst": "The Dutch government published the rules for the 2026 round. Besides greenhouse use, CO2 captured from the air can now also be subsidised when it is stored permanently.",
+      "nl": "De regels voor de SDE++-ronde van 2026 zijn gepubliceerd. Naast gebruik in de kas kan CO2 uit de lucht nu ook subsidie krijgen als hij wordt opgeslagen.",
+      "rechtskracht": "In force",
+      "toepassing": [
+        "Greenhouses",
+        "Storage"
+      ],
+      "check": false,
+      "bron": {
+        "tekst": "Staatscourant 2026, 25954",
+        "url": "https://zoek.officielebekendmakingen.nl/stcrt-2026-25954.html",
+        "extra": null
+      },
+      "geschiedenis": []
+    },
+    {
+      "id": "ets-voorstel-2026-07",
+      "blok": "tijdlijn",
+      "regio": "Europe",
+      "status": "voorstel",
+      "datum": "2026-07-17",
+      "titel": "Commission proposes zero emission factor for CO2 from the air",
+      "tekst": "In its proposal for the revision of the EU ETS, the European Commission treats CO2 captured from the atmosphere the same as sustainable biomass: an emission factor of zero.",
+      "nl": "In het voorstel voor de herziening van het ETS behandelt de Europese Commissie CO2 uit de lucht net als duurzame biomassa: emissiefactor nul.",
+      "rechtskracht": "Proposal",
+      "toepassing": [
+        "All uses"
+      ],
+      "check": true,
+      "bron": {
+        "tekst": "European Commission proposal, recital 81, via CO2 Value Europe",
+        "url": null,
+        "extra": null
+      },
+      "geschiedenis": []
+    },
+    {
+      "id": "innovation-fund-dac-2026-10",
+      "blok": "tijdlijn",
+      "regio": "Europe",
+      "datum": "2026-10-19",
+      "titel": "EU Innovation Fund backs its first direct air capture project",
+      "tekst": "The European Commission selected 77 net-zero technology projects for 3.4 billion euro in grants. For the first time this includes a direct air capture project with storage: Furu in Norway, about 4,000 tonnes of CO2 per year.",
+      "nl": "De Europese Commissie geeft 3,4 miljard euro aan 77 projecten. Voor het eerst zit daar een DAC-project bij, met opslag: Furu in Noorwegen, ongeveer 4.000 ton CO2 per jaar. De volgende oproep verwacht de Commissie begin december.",
+      "rechtskracht": "In force",
+      "toepassing": [
+        "Storage"
+      ],
+      "check": true,
+      "bron": {
+        "tekst": "European Commission, 19 October 2026, via S&P Global",
+        "url": "https://www.spglobal.com/energy/en/news-research/latest-news/energy-transition/101926-eu-commits-34b-to-77-net-zero-technology-projects"
+      },
+      "status": "voorstel",
+      "geschiedenis": []
+    }
+  ],
+  "kansen": [
+    {
+      "id": "award-best-co2-utilisation-2027",
+      "regio": "Europe",
+      "titel": "Innovation award Best CO2 Utilisation 2027",
+      "wat": "Prijs voor de beste CO2-toepassing, uitgereikt op de CO2-based Fuels and Chemicals Conference (nova-Institut), 21 en 22 april 2027 in Keulen, ook online. Posters kunnen tot begin april.",
+      "waarom": "Zichtbaarheid bij de Europese CCU-gemeenschap; het congres staat ook in de agenda van CO2 Value Europe.",
+      "datum": "2027-04-21",
+      "deadline": "2027-02-01",
+      "plaats": "Cologne, also online",
+      "link": "https://renewable-carbon.eu/news/?p=178525",
+      "bron": "https://co2value.eu/event/co2-based-fuels-and-chemicals-conference-2027/",
+      "status": "nieuw"
+    }
+  ]
+}

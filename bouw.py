@@ -25,9 +25,18 @@ PAGES = [  # (bestand, naam in de bron en in Word)
     ("technology.html", "technology"),
     ("team.html", "team"),
     ("news.html", "news"),
+    # Conceptpagina's (alleen op de branch concept, nog niet live)
+    ("markets.html", "markets"),
+    ("legislation.html", "legislation"),
+    ("partners.html", "partners"),
+    ("about.html", "about"),
+    ("investors.html", "investors"),
     ("contact.html", "contact"),
     ("privacy.html", "privacy"),
 ]
+# Alleen pagina's waarvan bron en sjabloon in deze versie bestaan: de live versie (main) heeft minder
+# pagina's dan de conceptversie, en zo is bouw.py op beide gelijk (zie zet-live.py).
+PAGES = [(f, p) for f, p in PAGES if (BRON / f"{p}.md").exists() and (SJAB / f).exists()]
 
 # Delen van de pagina die in het sjabloon blijven (navigatie, voettekst, inhoudsopgave, tekening).
 SKIP_BLOCKS = re.compile(
@@ -139,6 +148,9 @@ def build_page(fname, page, outdir):
     if missing or extra:
         sys.exit(f"{page}: ontbreekt in bron {sorted(missing)}, niet in sjabloon {sorted(extra)}")
     out = re.sub(r"\{\{([^}]+)\}\}", lambda m: items[m.group(1)], tpl)
+    if "<!--NIEUWS:" in out:  # punten uit nieuws/nieuws.json, zie CLAUDE.md "Nieuwsoverzicht"
+        from nieuws.nieuws import invullen
+        out = invullen(out)
     tmp = outdir / (fname + ".tmp")  # schrijven via tijdelijk bestand, overschrijven bleek traag
     tmp.write_text(out, encoding="utf-8")
     tmp.replace(outdir / fname)
