@@ -38,9 +38,9 @@ REGIO_NL = {"Benelux": "Benelux", "Europe": "Europa", "World": "Wereld"}
 BLOK = {"fuels", "ets", "benelux", "wereld", "tijdlijn"}
 RECHT = {"In force", "Proposal"}
 TOEPASSING = {"Greenhouses", "Fuels", "Chemicals & materials", "Food & beverage", "Storage", "All uses"}
-NIEUW_VELDEN = ["id", "blok", "regio", "titel", "tekst", "nl", "rechtskracht", "toepassing", "bron"]  # plus datum, check
+NIEUW_VELDEN = ["id", "blok", "regio", "titel", "tekst", "rechtskracht", "toepassing", "bron"]  # plus datum, check, nl (optioneel)
 KANS_VELDEN = ["id", "regio", "titel", "wat", "waarom", "datum", "plaats", "link", "bron"]  # plus deadline
-# Taal: titel en plaats in het Engels (komen in de mail aan Berno), wat en waarom in het Nederlands (chat en leesversie).
+# Taal: alles in het Engels (site, mail en leesversie). 'nl' bij punten is optioneel, alleen als hulp voor de chat.
 KEUZES = {
     "op-pagina": {"houden": None, "aanpassen": None, "weghalen": "weg"},
     "voorstel": {"plaatsen": "op-pagina", "niet": "weg"},
@@ -169,7 +169,7 @@ def lijst():
         print(f"\n== {REGIO_NL[r]} ==")
         for p in rv:
             print(f"- NIEUW VOOR DE PAGINA [{p['id']}] {p['titel']}" + (f" ({datum_nl(p['datum'])})" if p.get("datum") else ""))
-            print(f"    {p['nl']}")
+            print(f"    {p.get('nl') or p['tekst']}")
             print(f"    {p['rechtskracht']} · {', '.join(p['toepassing'])} · Bron: {bron_tekst(p['bron'])}"
                   + ("  [nog te controleren in de oorspronkelijke tekst]" if p.get("check") else ""))
             print("    Keuze: plaatsen of niet")
@@ -302,11 +302,11 @@ def maak_word(naar_site):
         r = doc.add_paragraph().add_run(tekst)
         r.font.size, r.font.color.rgb = Pt(9), kleur
 
-    t = doc.add_paragraph().add_run("Nieuwsoverzicht CO2CirculAir")
+    t = doc.add_paragraph().add_run("News overview CO2CirculAir")
     t.bold, t.font.size = True, Pt(16)
     s = doc.add_paragraph().add_run(
-        f"Editie {datum_nl(data.get('laatste_check') or vandaag())}. Dit is de leesversie. "
-        "Kiezen doe je in je Claude-app: zeg \"nieuwsoverzicht\".")
+        f"Edition of {datum_en(data.get('laatste_check') or vandaag())}. This is the reading version. "
+        "To choose, open your Claude app and say \"nieuwsoverzicht\".")
     s.italic, s.font.color.rgb = True, grijs
 
     voor = [p for p in data["punten"] if p["status"] == "voorstel"]
@@ -316,31 +316,31 @@ def maak_word(naar_site):
         rk = [k for k in kansen if k["regio"] == r]
         if not (rv or rk):
             continue
-        kop(REGIO_NL[r])
+        kop(r)
         for p in rv:
             par = doc.add_paragraph()
-            par.add_run("Nieuw voor de pagina: ").bold = True
+            par.add_run("For the page: ").bold = True
             par.add_run(p["titel"]).bold = True
             if p.get("datum"):
-                par.add_run(f"   {datum_nl(p['datum'])}").font.color.rgb = grijs
-            doc.add_paragraph(p["nl"])
-            klein(f"{p['rechtskracht']} · {', '.join(p['toepassing'])} | Bron: {bron_tekst(p['bron'])}"
+                par.add_run(f"   {datum_en(p['datum'])}").font.color.rgb = grijs
+            doc.add_paragraph(p["tekst"])
+            klein(f"{p['rechtskracht']} · {', '.join(p['toepassing'])} | Source: {bron_tekst(p['bron'])}"
                   + (f" | {p['bron']['url']}" if p["bron"].get("url") else ""))
             if p.get("check"):
-                klein("Nog te controleren in de oorspronkelijke tekst.", rood)
+                klein("Still to be checked against the original text.", rood)
         for k in rk:
             par = doc.add_paragraph()
-            par.add_run("Kans om je te laten zien: ").bold = True
+            par.add_run("Opportunity to present: ").bold = True
             par.add_run(f"{k['titel']}").bold = True
-            par.add_run(f"   {datum_nl(k['datum'])}, {k['plaats']}").font.color.rgb = grijs
-            doc.add_paragraph(f"{k['wat']} Wat het oplevert: {k['waarom']}")
-            klein((f"Aanmelden vóór {datum_nl(k['deadline'])} | " if k.get("deadline") else "") + f"{k['link']} | Bron: {k['bron']}")
+            par.add_run(f"   {datum_en(k['datum'])}, {k['plaats']}").font.color.rgb = grijs
+            doc.add_paragraph(f"{k['wat']} What it offers: {k['waarom']}")
+            klein((f"Apply before {datum_en(k['deadline'])} | " if k.get("deadline") else "") + f"{k['link']} | Source: {k['bron']}")
     if not (voor or kansen):
-        doc.add_paragraph("Deze twee weken geen nieuwe voorstellen of kansen.")
-    kop("Wat er nu op de pagina staat", 12)
+        doc.add_paragraph("No new proposals or opportunities in the last two weeks.")
+    kop("Currently on the page", 12)
     for p in data["punten"]:
         if p["status"] == "op-pagina":
-            doc.add_paragraph(f"{REGIO_NL[p['regio']]}: {p['titel']}", style="List Bullet")
+            doc.add_paragraph(f"{p['regio']}: {p['titel']}", style="List Bullet")
     if naar_site:
         uit = SITE_DOCX
     else:
